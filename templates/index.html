@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Prediction of Finding Job </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="emp_nonemp" placeholder="emp_nonemp" required="required" />
+        <input type="text" name="bin_BL_gender" placeholder="bin_BL_gender" required="required" />
+		<input type="text" name="bin_BL_marital2" placeholder="bin_BL_marital2" required="required" />
+		<input type="text" name="bin_BL_education" placeholder="bin_BL_education" required="required" />
+        <input type="text" name="age_group" placeholder="age_group" required="required" />
+		<input type="text" name="BL_F6" placeholder="BL_F6" required="required" />
+        <input type="text" name="Labour_market_A4" placeholder="Labour_market_A4" required="required" />
+        <input type="text" name="FU_B1_imputed" placeholder="FU_B1_imputed" required="required" />
+        <input type="text" name="BL_Difference_G" placeholder="BL_Difference_G" required="required" />
+		<input type="text" name="BL_B6_13" placeholder="BL_B6_13" required="required" />
+		<input type="text" name="FU_A10_imputed" placeholder="FU_A10_imputed" required="required" />
+        <input type="text" name="FU_A14_imputed" placeholder="FU_A14_imputed" required="required" />
+		<input type="text" name="BL_A4_groupped" placeholder="BL_A4_groupped" required="required" />
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
